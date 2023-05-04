@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./Components/Navbar";
+import Chatbot from "./Components/Chatbot";
 
 function App() {
+  const systemMessage = {
+    role: "system",
+    content:
+      "You are the personalized chatbot for SAP Labs organization.You have to assist the user with any questions or concerns regarding SAP Labs.",
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Chatbot systemMessage={systemMessage} />
     </div>
   );
 }
